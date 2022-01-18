@@ -15,6 +15,7 @@
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "sw-precache": "^5.2.1",
     "tachyons": "^4.12.0",
     "web-vitals": "^2.1.2",
     "workbox-background-sync": "^5.1.4",
@@ -34,7 +35,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp manifest.json build/ && sw-precache --root='build/' --static-file-globs='build/**/!(*map*)'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
